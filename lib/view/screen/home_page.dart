@@ -138,7 +138,14 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: CustomAppBar(
+        title: 'Hello, Olav',
+        image: Image.asset(
+          'assets/images/profile.png',
+          fit: BoxFit.cover,
+        ),
+        leading: SvgPicture.asset('assets/icons/menu.svg'),
+      ),
       extendBody: true,
       bottomNavigationBar: BottomSearchBar(),
       drawer: CustomSideBar(),
