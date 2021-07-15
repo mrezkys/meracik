@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final Widget leading;
   final Widget rightIcon;
+  final Function onPressedLeading;
 
-  CustomAppBar({@required this.title, @required this.leading, this.rightIcon});
+  CustomAppBar({@required this.title, @required this.leading, this.rightIcon, this.onPressedLeading});
   @override
   Size get preferredSize => const Size.fromHeight(65);
 
@@ -20,9 +20,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           backgroundColor: Colors.white,
           leading: IconButton(
             icon: leading,
-            onPressed: () {
-              Scaffold.of(context).openDrawer();
-            },
+            onPressed: onPressedLeading,
           ),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
