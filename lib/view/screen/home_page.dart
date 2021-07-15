@@ -140,7 +140,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: CustomAppBar(
         title: 'Hello, Olav',
-        image: Image.asset(
+        rightIcon: Image.asset(
           'assets/images/profile.png',
           fit: BoxFit.cover,
         ),

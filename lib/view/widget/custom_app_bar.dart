@@ -4,9 +4,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final Widget leading;
-  final Widget image;
+  final Widget rightIcon;
 
-  CustomAppBar({@required this.title, @required this.leading, this.image});
+  CustomAppBar({@required this.title, @required this.leading, this.rightIcon});
   @override
   Size get preferredSize => const Size.fromHeight(65);
 
@@ -31,12 +31,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 title,
                 style: TextStyle(color: Colors.black, fontSize: 22),
               ),
-              (image != null)
+              (rightIcon != null)
                   ? Container(
                       width: 40,
                       height: 40,
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(100), color: Colors.grey),
-                      child: image,
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(100)),
+                      child: rightIcon,
                     )
                   : SizedBox(),
             ],
