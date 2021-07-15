@@ -135,9 +135,13 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
+    print(_scaffoldKey.currentState);
     return Scaffold(
+      key: _scaffoldKey,
       appBar: CustomAppBar(
         title: 'Hello, Olav',
         rightIcon: Image.asset(
@@ -145,6 +149,9 @@ class _HomePageState extends State<HomePage> {
           fit: BoxFit.cover,
         ),
         leading: SvgPicture.asset('assets/icons/menu.svg'),
+        onPressedLeading: () {
+          _scaffoldKey.currentState.openDrawer();
+        },
       ),
       extendBody: true,
       bottomNavigationBar: BottomSearchBar(),
